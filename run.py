@@ -48,15 +48,15 @@ def get_audio_info():
     return info
 
 
-cli = redis.Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
-
-
-def get_audio_info():
-    url = cli.rpop(config.ASR_AUDIO_URL_LIST)
-    if url:
-        return {"url": url}
-
-    return None
+# cli = redis.Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
+#
+#
+# def get_audio_info():
+#     url = cli.rpop(config.ASR_AUDIO_URL_LIST)
+#     if url:
+#         return {"url": url}
+#
+#     return None
 
 
 rec = SpeechRecognizer(model_name="large")

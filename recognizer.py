@@ -14,6 +14,9 @@ class SpeechRecognizer:
         self.model_name = model_name
         self.model = None
 
+    def load_model(self):
+        self.model = whisper.load_model(self.model_name)
+
     def auto_recognize(self, filepath, language=None, **kwargs):
         if self.model is None:
             self.model = whisper.load_model(self.model_name)

@@ -38,8 +38,7 @@ class Cutter:
             f = self.get_piece_filename(seg)
             piece.export(f)
             start += 30 * 1000
-            yield file
-
+            yield f
 
 
 if __name__ == "__main__":

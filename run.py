@@ -2,6 +2,8 @@ import logging.config
 import multiprocessing
 import redis
 
+from multiprocessing.managers import BaseManager
+
 import config
 from log_config import logging_dict_config
 
@@ -58,8 +60,6 @@ def get_audio_info():
 #
 #     return None
 
-rec = SpeechRecognizer(model_name="large")
-
 
 def run(recognizer):
     while True:
@@ -74,11 +74,14 @@ def run(recognizer):
         task.run()
 
 
-def multi_run(num=2, model_name="large"):
-    class CustomManager(multiprocessing.managers.BaseManager):
-        pass
+class CustomManager(BaseManager):
+    pass
 
-    CustomManager.register('SpeechRecognizer', SpeechRecognizer)
+
+CustomManager.register("SpeechRecognizer", SpeechRecognizer)
+
+
+def multi_run(num=2, model_name="large"):
     with CustomManager() as manager:
         share_recognizer = manager.SpeechRecognizer(model_name=model_name)
         processes = [multiprocessing.Process(target=run, args=(share_recognizer,)) for _ in range(num)]

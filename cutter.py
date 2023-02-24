@@ -37,7 +37,7 @@ class Cutter:
             piece = self.audio[start: start + self.duration * 1000]
             f = self.get_piece_filename(seg)
             piece.export(f)
-            start += 30 * 1000
+            start += self.duration * 1000
             yield f
 
 

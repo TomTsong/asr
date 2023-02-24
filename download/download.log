@@ -1,0 +1,132 @@
+2023-02-22 17:51:06,085-downloader.py-line:53-INFO-17802: get_resp_header_info() res_header: {'Content-Type': 'audio/x-aac', 'Date': 'Wed, 22 Feb 2023 09:51:06 GMT', 'ETag': '"bd01c6d5e2d2b6d4bf619d2bee405cdf-7"', 'Server': 'tencent-cos', 'x-cos-hash-crc64ecma': '14566833768531161097', 'x-cos-request-id': 'NjNmNWU1OGFfNjYxMjNmMGJfN2YyY19jNWZkOGM=', 'X-Cache-Lookup': 'Cache Miss, Hit From Inner Cluster, Hit From Upstream Cluster, Hit From Inner Cluster, Hit From Upstream Cluster, Hit From Inner Cluster, Cache Miss, Hit From Inner Cluster, Hit From Upstream Cluster', 'Last-Modified': 'Tue, 21 Feb 2023 02:31:29 GMT', 'Content-Length': '57600488', 'Accept-Ranges': 'bytes', 'X-NWS-LOG-UUID': '1592252204310219035', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin,No-Cache,X-Requested-With,If-Modified-Since,Pragma,Last-Modified,Cache-Control,Expires,Content-Type,X_Requested_With,Range', 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Content-Range'}
+2023-02-22 17:51:06,086-downloader.py-line:28-INFO-17802: init multi task, url:http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/e546c45c243791579844613923/f0.aac
+2023-02-22 17:51:06,086-downloader.py-line:29-INFO-17802: init multi task, sava_path:./download
+2023-02-22 17:51:06,086-downloader.py-line:30-INFO-17802: init multi task, file_name:e546c45c243791579844613923-f0.aac
+2023-02-22 17:51:06,086-downloader.py-line:31-INFO-17802: init multi task, thread_count:10
+2023-02-22 17:51:06,086-downloader.py-line:32-INFO-17802: init multi task, headers:{}
+2023-02-22 17:51:06,087-downloader.py-line:109-INFO-17802: run() get file total range: 57600488
+2023-02-22 17:51:06,087-downloader.py-line:114-INFO-17802: ready to download, full_path: ./download/e546c45c243791579844613923-f0.aac
+2023-02-22 17:51:06,087-downloader.py-line:118-INFO-17802: page: {'start_pos': 0, 'end_pos': 5760048}, page difference: 5760048
+2023-02-22 17:51:06,087-downloader.py-line:118-INFO-17802: page: {'start_pos': 5760049, 'end_pos': 11520097}, page difference: 5760048
+2023-02-22 17:51:06,087-downloader.py-line:118-INFO-17802: page: {'start_pos': 11520098, 'end_pos': 17280146}, page difference: 5760048
+2023-02-22 17:51:06,087-downloader.py-line:118-INFO-17802: page: {'start_pos': 17280147, 'end_pos': 23040195}, page difference: 5760048
+2023-02-22 17:51:06,088-downloader.py-line:118-INFO-17802: page: {'start_pos': 23040196, 'end_pos': 28800244}, page difference: 5760048
+2023-02-22 17:51:06,088-downloader.py-line:118-INFO-17802: page: {'start_pos': 28800245, 'end_pos': 34560293}, page difference: 5760048
+2023-02-22 17:51:06,090-downloader.py-line:118-INFO-17802: page: {'start_pos': 34560294, 'end_pos': 40320342}, page difference: 5760048
+2023-02-22 17:51:06,091-downloader.py-line:118-INFO-17802: page: {'start_pos': 40320343, 'end_pos': 46080391}, page difference: 5760048
+2023-02-22 17:51:06,091-downloader.py-line:118-INFO-17802: page: {'start_pos': 46080392, 'end_pos': 51840440}, page difference: 5760048
+2023-02-22 17:51:06,091-downloader.py-line:118-INFO-17802: page: {'start_pos': 51840441, 'end_pos': 57600487}, page difference: 5760046
+2023-02-22 17:51:06,091-downloader.py-line:74-INFO-17802: thread 0 start to download
+2023-02-22 17:51:06,091-downloader.py-line:74-INFO-17802: thread 1 start to download
+2023-02-22 17:51:06,093-downloader.py-line:74-INFO-17802: thread 2 start to download
+2023-02-22 17:51:06,094-downloader.py-line:74-INFO-17802: thread 3 start to download
+2023-02-22 17:51:06,094-downloader.py-line:74-INFO-17802: thread 4 start to download
+2023-02-22 17:51:06,095-downloader.py-line:74-INFO-17802: thread 5 start to download
+2023-02-22 17:51:06,097-downloader.py-line:74-INFO-17802: thread 6 start to download
+2023-02-22 17:51:06,098-downloader.py-line:74-INFO-17802: thread 7 start to download
+2023-02-22 17:51:06,099-downloader.py-line:74-INFO-17802: thread 8 start to download
+2023-02-22 17:51:06,099-downloader.py-line:74-INFO-17802: thread 9 start to download
+2023-02-22 17:51:20,208-downloader.py-line:84-INFO-17802: thread 5 download length: 5760049
+2023-02-22 17:51:20,211-downloader.py-line:98-INFO-17802: thread 5 download success, spent_time: 14.112189054489136, progress: 1/10
+2023-02-22 17:51:20,240-downloader.py-line:84-INFO-17802: thread 8 download length: 5760049
+2023-02-22 17:51:20,244-downloader.py-line:98-INFO-17802: thread 8 download success, spent_time: 14.142986059188843, progress: 2/10
+2023-02-22 17:51:20,451-downloader.py-line:84-INFO-17802: thread 6 download length: 5760049
+2023-02-22 17:51:20,455-downloader.py-line:98-INFO-17802: thread 6 download success, spent_time: 14.354618310928345, progress: 3/10
+2023-02-22 17:51:20,510-downloader.py-line:84-INFO-17802: thread 9 download length: 5760047
+2023-02-22 17:51:20,513-downloader.py-line:98-INFO-17802: thread 9 download success, spent_time: 14.409518957138062, progress: 4/10
+2023-02-22 17:51:20,659-downloader.py-line:84-INFO-17802: thread 1 download length: 5760049
+2023-02-22 17:51:20,663-downloader.py-line:98-INFO-17802: thread 1 download success, spent_time: 14.570160150527954, progress: 5/10
+2023-02-22 17:51:20,798-downloader.py-line:84-INFO-17802: thread 7 download length: 5760049
+2023-02-22 17:51:20,803-downloader.py-line:98-INFO-17802: thread 7 download success, spent_time: 14.702351093292236, progress: 6/10
+2023-02-22 17:51:20,862-downloader.py-line:84-INFO-17802: thread 4 download length: 5760049
+2023-02-22 17:51:20,864-downloader.py-line:98-INFO-17802: thread 4 download success, spent_time: 14.768006324768066, progress: 7/10
+2023-02-22 17:51:21,019-downloader.py-line:84-INFO-17802: thread 0 download length: 5760049
+2023-02-22 17:51:21,023-downloader.py-line:84-INFO-17802: thread 3 download length: 5760049
+2023-02-22 17:51:21,027-downloader.py-line:98-INFO-17802: thread 3 download success, spent_time: 14.932342052459717, progress: 8/10
+2023-02-22 17:51:21,029-downloader.py-line:98-INFO-17802: thread 0 download success, spent_time: 14.937368154525757, progress: 9/10
+2023-02-22 17:51:21,185-downloader.py-line:84-INFO-17802: thread 2 download length: 5760049
+2023-02-22 17:51:21,192-downloader.py-line:98-INFO-17802: thread 2 download success, spent_time: 15.097450971603394, progress: 10/10
+2023-02-22 17:51:21,206-downloader.py-line:133-INFO-17802: download finishing..........
+2023-02-22 17:51:21,206-downloader.py-line:134-INFO-17802: total size 57600488 Bytes (54.93 MB), actual file size 57600488 Bytes, are they equal? True
+2023-02-22 17:51:21,206-downloader.py-line:137-INFO-17802: total spent time: 15.12 second, average download speed: 3.63 MB/s
+2023-02-22 17:51:21,206-downloader.py-line:143-INFO-17802: download success!
+2023-02-22 19:03:07,253-downloader.py-line:53-INFO-18145: get_resp_header_info() res_header: {'Last-Modified': 'Tue, 21 Feb 2023 02:31:29 GMT', 'Etag': '"bd01c6d5e2d2b6d4bf619d2bee405cdf-7"', 'Content-Type': 'audio/x-aac', 'Content-Length': '57600488', 'Accept-Ranges': 'bytes', 'X-NWS-LOG-UUID': '13939639713370920579', 'Connection': 'keep-alive', 'Server': 'lego_vod', 'Date': 'Wed, 22 Feb 2023 11:03:07 GMT', 'X-Cache-Lookup': 'Cache Hit', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin,No-Cache,X-Requested-With,If-Modified-Since,Pragma,Last-Modified,Cache-Control,Expires,Content-Type,X_Requested_With,Range', 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Content-Range'}
+2023-02-22 19:03:07,255-downloader.py-line:28-INFO-18145: init multi task, url:http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/e546c45c243791579844613923/f0.aac
+2023-02-22 19:03:07,255-downloader.py-line:29-INFO-18145: init multi task, sava_path:./download
+2023-02-22 19:03:07,255-downloader.py-line:30-INFO-18145: init multi task, file_name:e546c45c243791579844613923-f0.aac
+2023-02-22 19:03:07,255-downloader.py-line:31-INFO-18145: init multi task, thread_count:10
+2023-02-22 19:03:07,256-downloader.py-line:32-INFO-18145: init multi task, headers:{}
+2023-02-22 19:03:07,256-downloader.py-line:109-INFO-18145: run() get file total range: 57600488
+2023-02-22 19:03:07,256-downloader.py-line:114-INFO-18145: ready to download, full_path: ./download/e546c45c243791579844613923-f0.aac
+2023-02-22 19:03:07,257-downloader.py-line:118-INFO-18145: page: {'start_pos': 0, 'end_pos': 5760048}, page difference: 5760048
+2023-02-22 19:03:07,258-downloader.py-line:118-INFO-18145: page: {'start_pos': 5760049, 'end_pos': 11520097}, page difference: 5760048
+2023-02-22 19:03:07,258-downloader.py-line:118-INFO-18145: page: {'start_pos': 11520098, 'end_pos': 17280146}, page difference: 5760048
+2023-02-22 19:03:07,258-downloader.py-line:118-INFO-18145: page: {'start_pos': 17280147, 'end_pos': 23040195}, page difference: 5760048
+2023-02-22 19:03:07,258-downloader.py-line:118-INFO-18145: page: {'start_pos': 23040196, 'end_pos': 28800244}, page difference: 5760048
+2023-02-22 19:03:07,258-downloader.py-line:118-INFO-18145: page: {'start_pos': 28800245, 'end_pos': 34560293}, page difference: 5760048
+2023-02-22 19:03:07,259-downloader.py-line:118-INFO-18145: page: {'start_pos': 34560294, 'end_pos': 40320342}, page difference: 5760048
+2023-02-22 19:03:07,259-downloader.py-line:118-INFO-18145: page: {'start_pos': 40320343, 'end_pos': 46080391}, page difference: 5760048
+2023-02-22 19:03:07,259-downloader.py-line:118-INFO-18145: page: {'start_pos': 46080392, 'end_pos': 51840440}, page difference: 5760048
+2023-02-22 19:03:07,259-downloader.py-line:118-INFO-18145: page: {'start_pos': 51840441, 'end_pos': 57600487}, page difference: 5760046
+2023-02-22 19:03:07,260-downloader.py-line:74-INFO-18145: thread 0 start to download
+2023-02-22 19:03:07,260-downloader.py-line:74-INFO-18145: thread 1 start to download
+2023-02-22 19:03:07,261-downloader.py-line:74-INFO-18145: thread 2 start to download
+2023-02-22 19:03:07,263-downloader.py-line:74-INFO-18145: thread 3 start to download
+2023-02-22 19:03:07,264-downloader.py-line:74-INFO-18145: thread 4 start to download
+2023-02-22 19:03:07,264-downloader.py-line:74-INFO-18145: thread 5 start to download
+2023-02-22 19:03:07,264-downloader.py-line:74-INFO-18145: thread 6 start to download
+2023-02-22 19:03:07,265-downloader.py-line:74-INFO-18145: thread 7 start to download
+2023-02-22 19:03:07,266-downloader.py-line:74-INFO-18145: thread 8 start to download
+2023-02-22 19:03:07,269-downloader.py-line:74-INFO-18145: thread 9 start to download
+2023-02-22 19:03:19,761-downloader.py-line:84-INFO-18145: thread 7 download length: 5760049
+2023-02-22 19:03:19,770-downloader.py-line:98-INFO-18145: thread 7 download success, spent_time: 12.497324705123901, progress: 1/10
+2023-02-22 19:03:20,254-downloader.py-line:84-INFO-18145: thread 5 download length: 5760049
+2023-02-22 19:03:20,258-downloader.py-line:98-INFO-18145: thread 5 download success, spent_time: 12.98737621307373, progress: 2/10
+2023-02-22 19:03:20,419-downloader.py-line:84-INFO-18145: thread 4 download length: 5760049
+2023-02-22 19:03:20,427-downloader.py-line:98-INFO-18145: thread 4 download success, spent_time: 13.16169285774231, progress: 3/10
+2023-02-22 19:03:20,470-downloader.py-line:84-INFO-18145: thread 8 download length: 5760049
+2023-02-22 19:03:20,473-downloader.py-line:84-INFO-18145: thread 0 download length: 5760049
+2023-02-22 19:03:20,482-downloader.py-line:98-INFO-18145: thread 0 download success, spent_time: 13.222276210784912, progress: 4/10
+2023-02-22 19:03:20,486-downloader.py-line:84-INFO-18145: thread 1 download length: 5760049
+2023-02-22 19:03:20,491-downloader.py-line:98-INFO-18145: thread 8 download success, spent_time: 13.217190027236938, progress: 5/10
+2023-02-22 19:03:20,493-downloader.py-line:98-INFO-18145: thread 1 download success, spent_time: 13.232010841369629, progress: 6/10
+2023-02-22 19:03:20,698-downloader.py-line:84-INFO-18145: thread 9 download length: 5760047
+2023-02-22 19:03:20,707-downloader.py-line:98-INFO-18145: thread 9 download success, spent_time: 13.431871891021729, progress: 7/10
+2023-02-22 19:03:20,722-downloader.py-line:84-INFO-18145: thread 3 download length: 5760049
+2023-02-22 19:03:20,726-downloader.py-line:98-INFO-18145: thread 3 download success, spent_time: 13.461579084396362, progress: 8/10
+2023-02-22 19:03:20,755-downloader.py-line:84-INFO-18145: thread 2 download length: 5760049
+2023-02-22 19:03:20,758-downloader.py-line:84-INFO-18145: thread 6 download length: 5760049
+2023-02-22 19:03:20,760-downloader.py-line:98-INFO-18145: thread 6 download success, spent_time: 13.488092184066772, progress: 9/10
+2023-02-22 19:03:20,767-downloader.py-line:98-INFO-18145: thread 2 download success, spent_time: 13.504687070846558, progress: 10/10
+2023-02-22 19:03:20,781-downloader.py-line:133-INFO-18145: download finishing..........
+2023-02-22 19:03:20,782-downloader.py-line:134-INFO-18145: total size 57600488 Bytes (54.93 MB), actual file size 57600488 Bytes, are they equal? True
+2023-02-22 19:03:20,782-downloader.py-line:137-INFO-18145: total spent time: 13.53 second, average download speed: 4.06 MB/s
+2023-02-22 19:03:20,782-downloader.py-line:143-INFO-18145: download success!
+2023-02-22 19:25:33,178-downloader.py-line:53-INFO-18357: get_resp_header_info() res_header: {'Etag': '"bd01c6d5e2d2b6d4bf619d2bee405cdf-7"', 'Content-Type': 'audio/x-aac', 'Server': 'stsoc_lego_JR5', 'Date': 'Wed, 22 Feb 2023 11:25:33 GMT', 'X-Cache-Lookup': 'Cache Hit, Hit From Inner Cluster, Cache Miss, Hit From Inner Cluster, Hit From Upstream Cluster', 'Last-Modified': 'Tue, 21 Feb 2023 02:31:29 GMT', 'Content-Length': '57600488', 'Accept-Ranges': 'bytes', 'X-NWS-LOG-UUID': '1727954862735672103', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin,No-Cache,X-Requested-With,If-Modified-Since,Pragma,Last-Modified,Cache-Control,Expires,Content-Type,X_Requested_With,Range', 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS', 'Access-Control-Allow-Origin': '*', 'Access-Control-Expose-Headers': 'Content-Range'}
+2023-02-22 19:25:33,179-downloader.py-line:28-INFO-18357: init multi task, url:http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/e546c45c243791579844613923/f0.aac
+2023-02-22 19:25:33,179-downloader.py-line:29-INFO-18357: init multi task, sava_path:./download
+2023-02-22 19:25:33,179-downloader.py-line:30-INFO-18357: init multi task, file_name:e546c45c243791579844613923-f0.aac
+2023-02-22 19:25:33,179-downloader.py-line:31-INFO-18357: init multi task, thread_count:10
+2023-02-22 19:25:33,180-downloader.py-line:32-INFO-18357: init multi task, headers:{}
+2023-02-22 19:25:33,180-downloader.py-line:109-INFO-18357: run() get file total range: 57600488
+2023-02-22 19:25:33,180-downloader.py-line:114-INFO-18357: ready to download, full_path: ./download/e546c45c243791579844613923-f0.aac
+2023-02-22 19:25:33,181-downloader.py-line:118-INFO-18357: page: {'start_pos': 0, 'end_pos': 5760048}, page difference: 5760048
+2023-02-22 19:25:33,181-downloader.py-line:118-INFO-18357: page: {'start_pos': 5760049, 'end_pos': 11520097}, page difference: 5760048
+2023-02-22 19:25:33,181-downloader.py-line:118-INFO-18357: page: {'start_pos': 11520098, 'end_pos': 17280146}, page difference: 5760048
+2023-02-22 19:25:33,181-downloader.py-line:118-INFO-18357: page: {'start_pos': 17280147, 'end_pos': 23040195}, page difference: 5760048
+2023-02-22 19:25:33,182-downloader.py-line:118-INFO-18357: page: {'start_pos': 23040196, 'end_pos': 28800244}, page difference: 5760048
+2023-02-22 19:25:33,182-downloader.py-line:118-INFO-18357: page: {'start_pos': 28800245, 'end_pos': 34560293}, page difference: 5760048
+2023-02-22 19:25:33,182-downloader.py-line:118-INFO-18357: page: {'start_pos': 34560294, 'end_pos': 40320342}, page difference: 5760048
+2023-02-22 19:25:33,182-downloader.py-line:118-INFO-18357: page: {'start_pos': 40320343, 'end_pos': 46080391}, page difference: 5760048
+2023-02-22 19:25:33,182-downloader.py-line:118-INFO-18357: page: {'start_pos': 46080392, 'end_pos': 51840440}, page difference: 5760048
+2023-02-22 19:25:33,183-downloader.py-line:118-INFO-18357: page: {'start_pos': 51840441, 'end_pos': 57600487}, page difference: 5760046
+2023-02-22 19:25:33,183-downloader.py-line:74-INFO-18357: thread 0 start to download
+2023-02-22 19:25:33,183-downloader.py-line:74-INFO-18357: thread 1 start to download
+2023-02-22 19:25:33,183-downloader.py-line:74-INFO-18357: thread 2 start to download
+2023-02-22 19:25:33,184-downloader.py-line:74-INFO-18357: thread 3 start to download
+2023-02-22 19:25:33,185-downloader.py-line:74-INFO-18357: thread 4 start to download
+2023-02-22 19:25:33,186-downloader.py-line:74-INFO-18357: thread 5 start to download
+2023-02-22 19:25:33,187-downloader.py-line:74-INFO-18357: thread 6 start to download
+2023-02-22 19:25:33,188-downloader.py-line:74-INFO-18357: thread 7 start to download
+2023-02-22 19:25:33,188-downloader.py-line:74-INFO-18357: thread 8 start to download
+2023-02-22 19:25:33,193-downloader.py-line:74-INFO-18357: thread 9 start to download

@@ -94,6 +94,7 @@ def multi_run(num=2, model_name="large"):
 
 
 if __name__ == "__main__":
-    # run()
-    num = 2
-    multi_run(num)
+    rec = SpeechRecognizer(model_name="large")
+    run(rec)
+    # num = 2
+    # multi_run(num)

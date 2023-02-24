@@ -3,7 +3,7 @@ REDIS_PORT = 6379
 REDIS_DB = 0
 ASR_AUDIO_URL_LIST = "asr-audio-url-list"
 
-MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641454-pub.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"
+MONGODB_URI = "mongodb://127.0.0.1:27017"
 MONGODB_DB = "rtc_service_offline_data"
 COLLECTION_TASK = "asr_task_test"
 COLLECTION_RESULT = "asr_result_test"

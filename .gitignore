@@ -1,14 +1,6 @@
 .idea/
 .git/
 venv/
+download/
 __pycache__/
 logs/
-repository/test-node/.git
-repository/sitebuilder
-repository/custom-site
-repository/custom-site-2
-repository/site-cli
-repository/workspace
-repository/payserver
-!repository/helloworld
-!repository/test-node

@@ -58,11 +58,10 @@ def get_audio_info():
 
     return None
 
-
 rec = SpeechRecognizer(model_name="large")
 
 
-def run():
+def run(recognizer):
     while True:
         # 第一步，获取url
         info = get_audio_info()
@@ -71,14 +70,23 @@ def run():
             break
 
         # 第二步，创建任务，并执行
-        task = ASRTask(info, recognizer=rec)
+        task = ASRTask(info, recognizer=recognizer)
         task.run()
 
 
-def multi_run(num=2):
-    for i in range(num):
-        p = multiprocessing.Process(target=run)
-        p.start()
+def multi_run(num=2, model_name="large"):
+    class CustomManager(multiprocessing.managers.BaseManager):
+        pass
+
+    CustomManager.register('SpeechRecognizer', SpeechRecognizer)
+    with CustomManager() as manager:
+        share_recognizer = manager.SpeechRecognizer(model_name=model_name)
+        processes = [multiprocessing.Process(target=run, args=(share_recognizer,)) for _ in range(num)]
+        for p in processes:
+            p.start()
+
+        for p in processes:
+            p.join()
 
 
 if __name__ == "__main__":

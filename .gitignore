@@ -1,6 +1,7 @@
 .idea/
 .git/
 venv/
+download/
 __pycache__/
 logs/
 repository/test-node/.git

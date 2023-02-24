@@ -19,7 +19,12 @@ urls = [
     "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/9ad6ba91243791579843741011/f0.aac",
     "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/dbac6b65243791579861837907/f0.aac",
     "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/7da29bdb243791579853326813/f0.aac",
-    # "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/cb79a958243791579861152364/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/cb79a958243791579861152364/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/d400d19f243791579854731726/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/e7e5e342243791579844756534/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/c59a9fdf243791579830683753/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/296b7102243791579845284087/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/d470af0e243791579854797738/f0.aac",
 ]
 infos = [
     {

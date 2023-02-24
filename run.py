@@ -1,5 +1,5 @@
 import logging.config
-
+import multiprocessing
 import redis
 
 import config
@@ -13,10 +13,10 @@ logger = logging.getLogger()
 
 
 urls = [
-    # "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/e546c45c243791579844613923/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/e546c45c243791579844613923/f0.aac",
     "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/9ad6ba91243791579843741011/f0.aac",
-    # "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/dbac6b65243791579861837907/f0.aac",
-    # "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/7da29bdb243791579853326813/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/dbac6b65243791579861837907/f0.aac",
+    "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/7da29bdb243791579853326813/f0.aac",
     # "http://1258455058.vod2.myqcloud.com/1def07cdvodcq1258455058/cb79a958243791579861152364/f0.aac",
 ]
 infos = [
@@ -59,8 +59,10 @@ def get_audio_info():
     return None
 
 
+rec = SpeechRecognizer(model_name="large")
+
+
 def run():
-    rec = SpeechRecognizer(model_name="large")
     while True:
         # 第一步，获取url
         info = get_audio_info()
@@ -73,5 +75,13 @@ def run():
         task.run()
 
 
+def multi_run(num=2):
+    for i in range(num):
+        p = multiprocessing.Process(target=run)
+        p.start()
+
+
 if __name__ == "__main__":
-    run()
+    # run()
+    num = 2
+    multi_run(num)

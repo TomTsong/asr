@@ -84,6 +84,7 @@ CustomManager.register("SpeechRecognizer", SpeechRecognizer)
 def multi_run(num=2, model_name="large"):
     with CustomManager() as manager:
         share_recognizer = manager.SpeechRecognizer(model_name=model_name)
+        share_recognizer.load_model()
         processes = [multiprocessing.Process(target=run, args=(share_recognizer,)) for _ in range(num)]
         for p in processes:
             p.start()

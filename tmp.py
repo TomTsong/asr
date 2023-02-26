@@ -63,15 +63,25 @@ def multi(files):
         t.join()
 
 
+def rrr(model, file):
+    print(id(model), file)
+    model.transcribe(file, language="Chinese", verbose=True)
+
+
+
 def multi2(files):
-    model = whisper.load_model("large", device="cpu")
+    model = whisper.load_model("large", device=None)
     model.share_memory()
-    ps = [
-        torch.multiprocessing.Process(target=model.transcribe, args=(f,), kwargs={"language": "Chinese", "verbose": True})
-        for f in files
-    ]
-    for p in ps:
+    ps = []
+    for f in files:
+        # p = torch.multiprocessing.Process(
+        #     target=model.transcribe,
+        #     args=(f,),
+        #     kwargs={"language": "Chinese", "verbose": True}
+        # )
+        p = torch.multiprocessing.Process(target=rrr, args=(model, f))
         p.start()
+        ps.append(p)
 
     for p in ps:
         p.join()

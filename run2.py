@@ -124,10 +124,32 @@ def multi_run2(num=2, model_name="large"):
         p.join()
 
 
+def run3(index, model):
+    recognizer = MyRecognizer(model)
+    while True:
+        # 第一步，获取url
+        info = get_audio_info()
+        if not info:
+            logger.info("info is none")
+            break
+
+        # 第二步，创建任务，并执行
+        task = ASRTask(info, recognizer=recognizer)
+        task.run()
+
+
+def multi_run3(num=2, model_name="base"):
+    model = whisper.load_model(model_name)
+    model.share_memory()
+    torch.multiprocessing.spawn(run3, args=(model,), nprocs=num)
+
+
 if __name__ == "__main__":
     # rec = SpeechRecognizer(model_name="large", device="cpu")
     # run(rec)
     # num = 2
     # multi_run(num)
+    # num = 2
+    # multi_run2(num, model_name="large")
     num = 2
-    multi_run2(num, model_name="large")
+    multi_run3(num, model_name="large")

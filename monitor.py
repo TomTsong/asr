@@ -1,3 +1,4 @@
+import arrow
 import logging.config
 import psutil
 import time
@@ -18,6 +19,7 @@ def check():
         "mem": mem,
         "cpu": cpu,
         "disk": disk,
+        "create_time": arrow.now().datetime,
     }
     logger.info(f"{info}")
     MonitorCollection.insert_one(info)

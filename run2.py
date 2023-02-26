@@ -4,10 +4,12 @@ import torch
 
 from multiprocessing.managers import BaseManager
 
+import whisper
+
 import config
 from log_config import logging_dict_config
 
-from recognizer import SpeechRecognizer
+from recognizer import SpeechRecognizer, MyRecognizer
 from task import ASRTask
 
 logging.config.dictConfig(logging_dict_config)
@@ -61,7 +63,8 @@ def get_audio_info():
     return None
 
 
-def run(recognizer):
+def run(model):
+    recognizer = MyRecognizer(model)
     while True:
         # 第一步，获取url
         info = get_audio_info()
@@ -108,8 +111,23 @@ def multi_run(num=2, model_name="large"):
         torch.multiprocessing.spawn(run2, args=(share_recognizer,), nprocs=num)
 
 
+def multi_run2(num=2, model_name="large"):
+    model = whisper.load_model(model_name)
+    model.share_memory()
+    ps = []
+    for i in range(num):
+        p = torch.multiprocessing.Process(target=run, args=(model,))
+        p.start()
+        ps.append(p)
+
+    for p in ps:
+        p.join()
+
+
 if __name__ == "__main__":
-    rec = SpeechRecognizer(model_name="large", device="cpu")
-    run(rec)
+    # rec = SpeechRecognizer(model_name="large", device="cpu")
+    # run(rec)
     # num = 2
     # multi_run(num)
+    num = 2
+    multi_run2(num, model_name="large")

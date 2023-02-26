@@ -26,6 +26,15 @@ class SpeechRecognizer:
         return result
 
 
+class MyRecognizer:
+    def __init__(self, model):
+        self.model = model
+
+    def auto_recognize(self, filepath, language=None, **kwargs):
+        result = self.model.transcribe(filepath, language=language, verbose=True)
+        return result
+
+
 if __name__ == "__main__":
     import pandas as pd
     sr = SpeechRecognizer(model_name="large")

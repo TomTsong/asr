@@ -49,8 +49,9 @@ def recognize(file):
         model.transcribe(new_file, language="Chinese", verbose=True)
 
 
-def multi_recognize(files):
-    model = whisper.load_model("large", device="cuda")
+def multi(files):
+    model = whisper.load_model("large", device="cpu")
+    model.share_memory()
     ts = [
         threading.Thread(target=model.transcribe, args=(f,), kwargs={"language": "Chinese", "verbose": True})
         for f in files
@@ -60,6 +61,20 @@ def multi_recognize(files):
 
     for t in ts:
         t.join()
+
+
+def multi2(files):
+    model = whisper.load_model("large", device="cpu")
+    model.share_memory()
+    ps = [
+        torch.multiprocessing.Process(target=model.transcribe, args=(f,), kwargs={"language": "Chinese", "verbose": True})
+        for f in files
+    ]
+    for p in ps:
+        p.start()
+
+    for p in ps:
+        p.join()
 
 
 if __name__ == "__main__":
@@ -94,7 +109,8 @@ if __name__ == "__main__":
     ]
     now = datetime.datetime.now()
     print(now)
-    multi_recognize(fs)
+    # multi(fs)
+    multi2(fs)
     end = datetime.datetime.now()
     print(end)
     print(end - now)

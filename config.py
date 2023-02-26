@@ -7,6 +7,7 @@ MONGODB_URI = "mongodb://127.0.0.1:27017"
 MONGODB_DB = "rtc_service_offline_data"
 COLLECTION_TASK = "asr_task_test"
 COLLECTION_RESULT = "asr_result_test"
+COLLECTION_MONITOR = "asr_monitor_test"
 
 WHISPER_TINY_SIZE = 39 * 1024 * 1024
 WHISPER_BASE_SIZE = 74 * 1024 * 1024

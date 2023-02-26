@@ -1,5 +1,3 @@
-import datetime
-
 from mongo import BaseCollection
 
 import config
@@ -41,6 +39,22 @@ class ResultCollection(BaseCollection):
         "start_time": "",
         "end_time": "",
         "text": "",
+        "create_time": "",
+        "update_time": ""
+    }
+    """
+
+
+class MonitorCollection(BaseCollection):
+    database = config.MONGODB_DB
+    name = config.COLLECTION_MONITOR
+
+    """struct
+    {
+        "_id": "",
+        "cpu": "",
+        "memory": "",
+        "disk": "",
         "create_time": "",
         "update_time": ""
     }

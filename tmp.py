@@ -5,6 +5,7 @@ import os
 import torch
 import whisper
 import pandas as pd
+import threading
 
 
 def sr(filepath, model_type="base", start_time=None, device="cpu"):
@@ -48,6 +49,19 @@ def recognize(file):
         model.transcribe(new_file, language="Chinese", verbose=True)
 
 
+def multi_recognize(files):
+    model = whisper.load_model("large", device="cuda")
+    ts = [
+        threading.Thread(target=model.transcribe, args=(f,), kwargs={"language": "Chinese", "verbose": True})
+        for f in files
+    ]
+    for t in ts:
+        t.start()
+
+    for t in ts:
+        t.join()
+
+
 if __name__ == "__main__":
     # path = "/Users/congdaxia/tools/multi_download"
     # # filename = "20230221_114814.m4a"
@@ -62,12 +76,25 @@ if __name__ == "__main__":
     # result = sr(filepath, "base")
     # # print(dir(result))
     # # print(result["text"])
-    file = "./download/9ad6ba91243791579843741011-f0-13.aac"
-    # recognize(file)
+    # file = "./download/9ad6ba91243791579843741011-f0-13.aac"
+    # # recognize(file)
+    # now = datetime.datetime.now()
+    # print(now)
+    # # sr(file, "large")
+    # sr(file, "large")
+    # end = datetime.datetime.now()
+    # print(end)
+    # print(end - now)
+
+    fs = [
+        "./download/20230221_114814.m4a",
+        "./download/1.m4a",
+        "./download/2.m4a",
+        "./download/3.m4a",
+    ]
     now = datetime.datetime.now()
     print(now)
-    # sr(file, "large")
-    sr(file, "large")
+    multi_recognize(fs)
     end = datetime.datetime.now()
     print(end)
     print(end - now)

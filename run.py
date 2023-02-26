@@ -1,6 +1,6 @@
 import logging.config
-import multiprocessing
 import redis
+import torch
 
 from multiprocessing.managers import BaseManager
 
@@ -74,6 +74,20 @@ def run(recognizer):
         task.run()
 
 
+def run2(index, recognizer):
+    logger.info(f"process {index}")
+    while True:
+        # 第一步，获取url
+        info = get_audio_info()
+        if not info:
+            logger.info("info is none")
+            break
+
+        # 第二步，创建任务，并执行
+        task = ASRTask(info, recognizer=recognizer)
+        task.run()
+
+
 class CustomManager(BaseManager):
     pass
 
@@ -85,16 +99,17 @@ def multi_run(num=2, model_name="large"):
     with CustomManager() as manager:
         share_recognizer = manager.SpeechRecognizer(model_name=model_name)
         share_recognizer.load_model()
-        processes = [multiprocessing.Process(target=run, args=(share_recognizer,)) for _ in range(num)]
-        for p in processes:
-            p.start()
-
-        for p in processes:
-            p.join()
+        # processes = [multiprocessing.Process(target=run, args=(share_recognizer,)) for _ in range(num)]
+        # for p in processes:
+        #     p.start()
+        #
+        # for p in processes:
+        #     p.join()
+        torch.multiprocessing.spawn(run2, args=(share_recognizer,), nprocs=num)
 
 
 if __name__ == "__main__":
-    rec = SpeechRecognizer(model_name="large")
-    run(rec)
-    # num = 2
-    # multi_run(num)
+    # rec = SpeechRecognizer(model_name="large")
+    # run(rec)
+    num = 2
+    multi_run(num)

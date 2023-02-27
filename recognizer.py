@@ -22,7 +22,7 @@ class SpeechRecognizer:
         if self.model is None:
             self.model = whisper.load_model(self.model_name)
 
-        result = self.model.transcribe(filepath, language=language, verbose=True)
+        result = self.model.transcribe(filepath, language=language, verbose=True, no_speech_threshold=0.6)
         return result
 
 

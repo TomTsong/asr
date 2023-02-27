@@ -1,16 +1,18 @@
 import datetime
 
 import arrow
-import os
 import torch
 import whisper
-import pandas as pd
 import threading
 
 
 def sr(filepath, model_type="base", start_time=None, device="cpu"):
-    # device = torch.device(device)
-    model = whisper.load_model(model_type)
+    first = datetime.datetime.now()
+    print(first)
+    print("模型开始加载...")
+    model = whisper.load_model(model_type, device=device)
+    second = datetime.datetime.now()
+    print(f"模型加载结束，耗时：{second - first}")
     if start_time:
         now = arrow.get(start_time)
     else:
@@ -32,7 +34,12 @@ def sr(filepath, model_type="base", start_time=None, device="cpu"):
     # result = whisper.decode(model, mel, options)
     # print the recognized text
     # print(result.text)
-    result = model.transcribe(filepath, fp16=False, language="Chinese")
+    print(second)
+    print("开始语音识别...")
+    result = model.transcribe(filepath, fp16=False, language="Chinese", no_speech_threshold=0.6)
+    third = datetime.datetime.now()
+    print(f"语音识别结束，耗时：{third - second}")
+    print(third)
     for segment in result["segments"]:
         start = now.shift(seconds=segment["start"]).format("YYYY-MM-DD HH:mm:ss")
         end = now.shift(seconds=segment["end"]).format("YYYY-MM-DD HH:mm:ss")
@@ -70,8 +77,13 @@ def rrr(model, file):
 
 
 def multi2(files):
-    model = whisper.load_model("large", device=None)
+    model = whisper.load_model("large", device="cpu")
+    print(model.device)
     model.share_memory()
+    print("aaaa")
+    # for f in files:
+    #     rrr(model, f)
+
     ps = []
     for f in files:
         # p = torch.multiprocessing.Process(
@@ -103,25 +115,20 @@ if __name__ == "__main__":
     # # print(result["text"])
     # file = "./download/9ad6ba91243791579843741011-f0-13.aac"
     # # recognize(file)
+    file0 = "./download/333.aac"
+    sr(file0, "large")
+
+    # fs = [
+    #     "./download/20230221_114814.m4a",
+    #     "./download/1.m4a",
+    #     "./download/2.m4a",
+    #     "./download/3.m4a",
+    # ]
     # now = datetime.datetime.now()
     # print(now)
-    # # sr(file, "large")
-    # sr(file, "large")
+    # # multi(fs)
+    # multi2(fs)
     # end = datetime.datetime.now()
     # print(end)
     # print(end - now)
-
-    fs = [
-        "./download/20230221_114814.m4a",
-        "./download/1.m4a",
-        "./download/2.m4a",
-        "./download/3.m4a",
-    ]
-    now = datetime.datetime.now()
-    print(now)
-    # multi(fs)
-    multi2(fs)
-    end = datetime.datetime.now()
-    print(end)
-    print(end - now)
 

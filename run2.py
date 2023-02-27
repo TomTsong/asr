@@ -64,6 +64,7 @@ def get_audio_info():
 
 
 def run(model):
+    print(model.device, id(model))
     recognizer = MyRecognizer(model)
     while True:
         # 第一步，获取url

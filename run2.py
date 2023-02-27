@@ -150,7 +150,7 @@ if __name__ == "__main__":
     # run(rec)
     # num = 2
     # multi_run(num)
-    # num = 2
-    # multi_run2(num, model_name="large")
     num = 2
-    multi_run3(num, model_name="large")
+    multi_run2(num, model_name="large")
+    # num = 2
+    # multi_run3(num, model_name="large")

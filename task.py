@@ -122,20 +122,21 @@ class ASRTask:
             self.recognizer = SpeechRecognizer()
 
         sr = self.recognizer
+        logger.info(f"[{task['task_id']}] 音频切条...")
+        cutter = Cutter(filepath, duration=config.DEFAULT_AUDIO_SEGMENT_DURATION)
         now = arrow.now().datetime
         TaskCollection.update_one(
             {"_id": task["_id"]},
             {
                 "$set": {
                     "size": size,
+                    "duration": cutter.total_duration,
                     "status": config.STATUS_START_RECOGNIZE,
                     "start_recognize_time": now,
                     "update_time": now
                 }
             }
         )
-        logger.info(f"[{task['task_id']}] 音频切条...")
-        cutter = Cutter(filepath, duration=config.DEFAULT_AUDIO_SEGMENT_DURATION)
         logger.info(f"[{task['task_id']}] 音频切条成功.")
         try:
             index = 0

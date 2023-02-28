@@ -50,7 +50,8 @@ def get_audio_info():
     return info
 
 
-cli = redis.Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
+# cli = redis.Redis(host=config.REDIS_HOST, port=config.REDIS_PORT, decode_responses=True)
+cli = redis.StrictRedis.from_url(config.REDIS_URI, decode_responses=True)
 
 
 def get_audio_info():

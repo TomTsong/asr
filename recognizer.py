@@ -1,10 +1,7 @@
 import logging
-import os
 
-import torch.cuda
 import whisper
 
-import config
 
 logger = logging.getLogger("recognizer")
 
@@ -22,7 +19,12 @@ class SpeechRecognizer:
         if self.model is None:
             self.model = whisper.load_model(self.model_name)
 
-        result = self.model.transcribe(filepath, language=language, verbose=True, no_speech_threshold=0.6)
+        fp16 = None
+        if str(self.model.device).startswith("cpu"):
+            fp16 = False
+
+        # no_speech_threshold=0.6
+        result = self.model.transcribe(filepath, language=language, verbose=True, fp16=fp16)
         return result
 
 
@@ -35,7 +37,7 @@ class MyRecognizer:
         if str(self.model.device).startswith("cpu"):
             fp16 = False
 
-        result = self.model.transcribe(filepath, language=language, verbose=True, fp16=fp16, no_speech_threshold=0.6)
+        result = self.model.transcribe(filepath, language=language, verbose=True, fp16=fp16)
         return result
 
 

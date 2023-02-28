@@ -31,17 +31,18 @@ class MyRecognizer:
         self.model = model
 
     def auto_recognize(self, filepath, language=None, **kwargs):
-        result = self.model.transcribe(filepath, language=language, verbose=True)
+        fp16 = None
+        if str(self.model.device).startswith("cpu"):
+            fp16 = False
+
+        result = self.model.transcribe(filepath, language=language, verbose=True, fp16=fp16, no_speech_threshold=0.6)
         return result
 
 
 if __name__ == "__main__":
-    import pandas as pd
     sr = SpeechRecognizer(model_name="large")
     # file = "./download/20230221_155642.m4a"
     # file = "./download/20230221_114814.m4a"
     # file = "./download/output.aac"
     file = "./download/20230221_155642-3.m4a"
     res = sr.auto_recognize(file)
-    # df = pd.DataFrame(res["segments"])
-    # print(df[["id", "seek", "start", "end", "text"]])

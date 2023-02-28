@@ -5,8 +5,8 @@ ASR_AUDIO_URL_LIST = "asr-audio-url-list"
 
 REDIS_URI = "redis://default:redispw@localhost:32768"
 
-# MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641454-pub.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"
-MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"
+MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641454-pub.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"
+# MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"
 MONGODB_DB = "rtc_service_offline_data"
 COLLECTION_TASK = "asr_task_test"
 COLLECTION_RESULT = "asr_result_test"

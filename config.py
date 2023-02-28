@@ -1,9 +1,9 @@
-REDIS_HOST = "127.0.0.1"
-REDIS_PORT = 6379
+# REDIS_HOST = "127.0.0.1"
+# REDIS_PORT = 6379
 REDIS_DB = 0
 ASR_AUDIO_URL_LIST = "asr-audio-url-list"
 
-REDIS_URI = "redis://127.0.0.1:6379"
+REDIS_URI = "redis://default:redispw@localhost:32768"
 
 # MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641454-pub.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"
 MONGODB_URI = "mongodb://quality_inspection:gV0EvTuPB1Pdm65@dds-2ze620d946a887641.mongodb.rds.aliyuncs.com:3717/rtc_service_offline_data"

@@ -135,7 +135,7 @@ class ASRTask:
             }
         )
         logger.info(f"[{task['task_id']}] 音频切条...")
-        cutter = Cutter(filepath)
+        cutter = Cutter(filepath, duration=config.DEFAULT_AUDIO_SEGMENT_DURATION)
         logger.info(f"[{task['task_id']}] 音频切条成功.")
         try:
             index = 0
